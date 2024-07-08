@@ -109,9 +109,10 @@ body {
       font-weight: 500;
       color: #000000 !important;
       background-color: #eeeeee;
-      padding:8px 18px;
+      padding:6px 18px;
       border-radius: 100px;
       transition: ease-out 0.5s;
+      /* margin: 0px 4px; */
     }
   
     .nav-icon {
@@ -241,10 +242,10 @@ body {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
-      gap: 14px;
+      justify-content: space-evenly;
+      /* gap: 16px; */
       transition: ease-out 0.5s;
-      bottom: 10px;
+      bottom: 18px;
       /* padding: 0px 10px; */
       margin: auto;
       margin-bottom: 5px;
@@ -290,5 +291,8 @@ body {
       transform: rotate(0) translate(0);
       transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
     }
-
+    .links{
+      padding:6px 18px;
+      border-radius: 100px;
+    }
   }

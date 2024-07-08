@@ -8,7 +8,6 @@ export default function ProjectCard(props) {
       </div>
       <div className="right">
         <div className="heading">{props.heading}</div>
-        <div className="tech">{props.tech}</div>
         <span
           className="web-link"
           onClick={() => {
@@ -17,6 +16,7 @@ export default function ProjectCard(props) {
         >
           Link →
         </span>
+        <div className="tech">{props.tech}</div>
         <div className="info">{props.info}</div>
       </div>
     </div>

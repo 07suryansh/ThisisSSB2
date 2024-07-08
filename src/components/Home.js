@@ -197,7 +197,9 @@ const [codeforcesData, setCodeforcesData] = useState(0);
           <span className="grade">10 CGPA</span>
         </div>
       </div>
-      <span className="skills-span">Programming</span>
+      <div className="about-heading">
+          <span className="about">Programming</span>
+        </div>
       <div className="skills-box">
             <ProgrammingCard
               platformName="Codeforces"

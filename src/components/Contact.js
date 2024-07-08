@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./contact.css";
 import slogo from "./assets/Vector 2.png";
 
 export default function Contact() {
+  useEffect(() => {
+    // Scroll to the bottom of the page when the component mounts
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
