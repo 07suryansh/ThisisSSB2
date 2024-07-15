@@ -375,7 +375,7 @@ p {
         border-radius: 50px;
         cursor: pointer;
         margin: 10px 0;
-        font-weight: 900;
+        font-weight: 700;
         transition: transform 0.3s ease;
     }
     .btn:hover{
