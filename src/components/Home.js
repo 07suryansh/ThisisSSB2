@@ -16,19 +16,16 @@ import {
 import axios from "axios";
 import ProgrammingCard from "./ProgrammingCard";
 
-
-
 export default function Home() {
+  // skills start
 
-
-// skills start
-
-
-const [codeforcesData, setCodeforcesData] = useState(0);
+  const [codeforcesData, setCodeforcesData] = useState(0);
   const [codechefData, setCodechefData] = useState(0);
   const [leetcodeData, setLeetcodeData] = useState(0);
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_API;
+    // console.log(apiKey);
     const cfapi = "https://codeforces.com/api/user.info?handles=07suryansh";
     axios
       .get(cfapi)
@@ -39,7 +36,7 @@ const [codeforcesData, setCodeforcesData] = useState(0);
       .catch((err) => {
         console.log(err);
       });
-    const ccapi = "https://coderme.vercel.app/codechef/bisensuryansh";
+    const ccapi = `${apiKey}/codechef`;
     axios
       .get(ccapi)
       .then((response) => {
@@ -49,11 +46,10 @@ const [codeforcesData, setCodeforcesData] = useState(0);
       .catch((err) => {
         console.log(err);
       });
-    const ltapi = "https://coderme.vercel.app/leetcode/07suryansh";
+    const ltapi = `${apiKey}/leetcode`;
     axios
       .get(ltapi)
       .then((response) => {
-        // console.log(response.data);
         setLeetcodeData(response.data);
       })
       .catch((err) => {
@@ -121,137 +117,135 @@ const [codeforcesData, setCodeforcesData] = useState(0);
     maxLeetcodeRank = leetcodeData.rating;
   }
 
-
-// skills end
-
-
-
-
+  // skills end
 
   return (
     <>
       <div className="home">
-      <div className="home-container">
-        <div className="user-card">
-          <img
-            src={mypic}
-            alt="profile"
-            className="profile-img"
-            draggable="false"
-          />
-          <span className="myname">Suryansh Singh Bisen</span>
-          <section className="socials">
-            <a href="www.google.com" className="icon-link">
-              <FaInstagram className="social-icon" />
-            </a>
-            <a href="www.google.com" className="icon-link">
-              <FaLinkedinIn className="social-icon" />
-            </a>
-            <a href="www.google.com" className="icon-link">
-              <FaXTwitter className="social-icon" />
-            </a>
-          </section>
+        <div className="home-container">
+          <div className="user-card">
+            <img
+              src={mypic}
+              alt="profile"
+              className="profile-img"
+              draggable="false"
+            />
+            <span className="myname">Suryansh Singh Bisen</span>
+            <section className="socials">
+              <a href="https://www.instagram.com/07suryansh/" className="icon-link">
+                <FaInstagram className="social-icon" />
+              </a>
+              <a href="https://www.linkedin.com/in/07suryansh/" className="icon-link">
+                <FaLinkedinIn className="social-icon" />
+              </a>
+              <a href="https://x.com/suryanshbisen" className="icon-link">
+                <FaXTwitter className="social-icon" />
+              </a>
+            </section>
 
-          <button
-            className="btn"
-            onClick={() => {
-              window.open(
-                "https://drive.google.com/drive/u/0/folders/1G8on4LDrpUruNEBfzn5GTGdVkhVoSj8K",
-                "_blank"
-              );
-            }}
-          >
-            Resume
-            
-          </button>
-          {/* <span class="material-symbols-outlined">download</span> */}
-          <p className="para">
-            I'm Web developer and UI/UX designer. I've done my graduation from National Institute of Technology Hamirpur.
-          </p>
+            <button
+              className="btn"
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/drive/u/0/folders/1G8on4LDrpUruNEBfzn5GTGdVkhVoSj8K",
+                  "_blank"
+                );
+              }}
+            >
+              Resume
+            </button>
+            {/* <span class="material-symbols-outlined">download</span> */}
+            <p className="para send">
+              I'm Full Stack Web developer and UI/UX designer. I've done my B.Tech in Electronics and Communication Engineering from
+              National Institute of Technology Hamirpur.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="about-container">
+        <div className="about-container">
+          <div className="about-heading">
+            <span className="about">Education</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              National Institute of Technology Hamirpur{" "}
+            </span>
+            <span className="study-stream">
+              B.Tech in Electronics and Communication Engineering
+            </span>
+            <span className="study-period">2020-2024</span>
+            <span className="grade">8.28/10</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              Kendriya Vidyalaya IIT Kanpur{" "}
+            </span>
+            <span className="study-stream">Class XII</span>
+            <span className="study-period">2019</span>
+            <span className="grade">95%</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              Kendriya Vidyalaya IIT Kanpur{" "}
+            </span>
+            <span className="study-stream">Class X</span>
+            <span className="study-period">2017</span>
+            <span className="grade">10 CGPA</span>
+          </div>
+        </div>
         <div className="about-heading">
-          <span className="about">Education</span>
-        </div>
-        <div className="about-box">
-          <span className="institute-name">
-            National Institute of Technology Hamirpur{" "}
-          </span>
-          <span className="study-stream">
-            B.Tech in Electronics and Communication Engineering
-          </span>
-          <span className="study-period">2020-2024</span>
-          <span className="grade">8.28/10</span>
-        </div>
-        <div className="about-box">
-          <span className="institute-name">Kendriya Vidyalaya IIT Kanpur </span>
-          <span className="study-stream">Class XII</span>
-          <span className="study-period">2019</span>
-          <span className="grade">95%</span>
-        </div>
-        <div className="about-box">
-          <span className="institute-name">Kendriya Vidyalaya IIT Kanpur </span>
-          <span className="study-stream">Class X</span>
-          <span className="study-period">2017</span>
-          <span className="grade">10 CGPA</span>
-        </div>
-      </div>
-      <div className="about-heading">
           <span className="about">Programming</span>
         </div>
-      <div className="skills-box">
-            <ProgrammingCard
-              platformName="Codeforces"
-              platformIcon={codeforces}
-              platformUsername={codeforcesData.handle}
-              currentRating={codeforcesData.rating}
-              currentRank={codeforcesData.rank}
-              highestRating={codeforcesData.maxRating}
-              highestRank={codeforcesData.maxRank}
-              nameCurrentColor={cfColour(codeforcesData.rank)}
-              nameHighestColor={cfColour(codeforcesData.maxRank)}
-              platformLink={"https://codeforces.com/profile/07suryansh"}
-            />
+        <div className="programming-box">
+          <ProgrammingCard
+            platformName="Codeforces"
+            platformIcon={codeforces}
+            platformUsername={codeforcesData.handle}
+            currentRating={codeforcesData.rating}
+            currentRank={codeforcesData.rank}
+            highestRating={codeforcesData.maxRating}
+            highestRank={codeforcesData.maxRank}
+            nameCurrentColor={cfColour(codeforcesData.rank)}
+            nameHighestColor={cfColour(codeforcesData.maxRank)}
+            platformLink={"https://codeforces.com/profile/07suryansh"}
+          />
 
-            <ProgrammingCard
-              platformName="Codechef"
-              platformIcon={codechef}
-              platformUsername={"bisensuryansh"}
-              currentRating={codechefData.rating}
-              currentRank={
-                <div style={{ display: "flex" }}>
-                  {curPrintStar(codechefData.rating).map((e, index) => (
-                    <div key={index}>{e}</div>
-                  ))}
-                </div>
-              }
-              highestRating={maxCodechefRank}
-              highestRank={
-                <div style={{ display: "flex" }}>
-                  {maxPrintStar(maxCodechefRank).map((e, index) => (
-                    <div key={index}>{e}</div>
-                  ))}
-                </div>
-              }
-              nameCurrentColor={ccColour(codechefData.rating)}
-              nameHighestColor={ccColour(maxCodechefRank)}
-              platformLink={"https://www.codechef.com/users/bisensuryansh"}
-            />
+          <ProgrammingCard
+            platformName="Codechef"
+            platformIcon={codechef}
+            platformUsername={"bisensuryansh"}
+            currentRating={codechefData.currentRating}
+            currentRank={
+              <div style={{ display: "flex" }}>
+                {curPrintStar(codechefData.currentRating).map((e, index) => (
+                  <div key={index}>{e}</div>
+                ))}
+              </div>
+            }
+            highestRating={codechefData.maxRating}
+            highestRank={
+              <div style={{ display: "flex" }}>
+                {maxPrintStar(codechefData.maxRating).map((e, index) => (
+                  <div key={index}>{e}</div>
+                ))}
+              </div>
+            }
+            nameCurrentColor={ccColour(codechefData.currentRating)}
+            nameHighestColor={ccColour(codechefData.maxRating)}
+            platformLink={"https://www.codechef.com/users/bisensuryansh"}
+          />
 
-            <ProgrammingCard
-              platformName="Leetcode"
-              platformIcon={leetcode}
-              platformUsername={"07suryansh"}
-              currentRating={leetcodeData.rating}
-              highestRating={maxLeetcodeRank}
-              nameCurrentColor={"black"}
-              nameHighestColor={"black"}
-              platformLink={"https://leetcode.com/07suryansh/"}
-            />
-
-          </div>
-          </div>
+          <ProgrammingCard
+            platformName="Leetcode"
+            platformIcon={leetcode}
+            platformUsername={"07suryansh"}
+            currentRating={leetcodeData.currentRating}
+            highestRating={leetcodeData.maxRating}
+            nameCurrentColor={"black"}
+            nameHighestColor={"black"}
+            platformLink={"https://leetcode.com/07suryansh/"}
+          />
+        </div>
+      </div>
     </>
   );
 }

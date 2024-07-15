@@ -1,8 +1,11 @@
 *{
   box-sizing: border-box;
+  transition: ease-out 0.5s;
+  margin: 0;
 }
 body {
   margin: 0;
+  transition: ease-out 0.5s;
 }
 
 
@@ -107,12 +110,12 @@ body {
    
     .active {
       font-weight: 500;
-      color: #000000 !important;
-      background-color: #eeeeee;
+      color: #ffffff !important;
+      background-color: #2F3645;
       padding:6px 18px;
       border-radius: 100px;
       transition: ease-out 0.5s;
-      /* margin: 0px 4px; */
+      margin: 0px 0px;
     }
   
     .nav-icon {
@@ -245,16 +248,16 @@ body {
       justify-content: space-evenly;
       /* gap: 16px; */
       transition: ease-out 0.5s;
-      bottom: 18px;
-      /* padding: 0px 10px; */
+      bottom: 10px;
+      padding: 0px 10px;
       margin: auto;
       margin-bottom: 5px;
       left: 0;
       right: 0;
       border-radius: 100px;
       opacity: 1;
-      box-shadow: 0 -10px 16px rgba(0, 0, 0, 0.1),
-                  0 10px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.2),
+                  0 10px 24px rgba(0, 0, 0, 0.2);
     }
   
     /* .hidden{
@@ -294,5 +297,100 @@ body {
     .links{
       padding:6px 18px;
       border-radius: 100px;
+      position: relative;
     }
+    .nav-shadow{
+      position: absolute;
+      height: 36px;
+      width: auto;
+      top: 0;
+      z-index: -2;
+      background-color: #e0e0e0;
+      border-radius: 100px;
+      display: flex;
+      margin: 12px 8px;
+    }
+
+
+    /* .links:nth-child(1):hover ~ .nav-shadow {
+      width: 80px;
+      left: 6px;
+    }
+    
+    .links:nth-child(2):hover ~ .nav-shadow {
+      width: 100px;
+      left: 90px;
+    }
+    
+    .links:nth-child(3):hover ~ .nav-shadow {
+      width: 85px;
+      left: 186px;
+    }
+    
+    .links:nth-child(4):hover ~ .nav-shadow {
+      width: 105px;
+      left: 266px;
+    } */
+
+    /* .nav-right-section:hover .nav-shadow.default {
+      width: 100px;
+      left: 0;
+    } */
+    
+    /* Show the shadow when hovered over links */
+    /* .links:active ~ .nav-shadow {
+      display: flex;
+    } */
+
+
+
+
+    /* .nav-right-section .nav-shadow,.links:nth-child(1):active~.nav-shadow{
+      width: 80px;
+      left: 6px;
+      border-radius: 100px;
+      transition: ease-out 0.3s;
+    }
+    .nav-right-section .nav-shadow,.links:nth-child(2):active~.nav-shadow{
+      width: 100px;
+      left: 90px;
+      border-radius: 100px;
+      transition: ease-out 0.3s;
+    }
+    .nav-right-section .nav-shadow,.links:nth-child(3):active~.nav-shadow{
+      width: 85px;
+      left: 186px;
+      border-radius: 100px;
+      transition: ease-out 0.3s;
+    }
+    .nav-right-section .nav-shadow,.links:nth-child(4):active~.nav-shadow{
+      width: 105px;
+      left: 266px;
+      border-radius: 100px;
+      transition: ease-out 0.3s;
+    } */
+
+    /* .nav-right-section .nav-shadow.default {
+      width: 100px;
+      left: 0;
+    }
+     */
+     .links.active + .nav-shadow {
+      display: flex;
+    }
+    
+    /* Ensure default behavior when no link is clicked */
+    .nav-right-section:hover .nav-shadow.default {
+      width: 100px;
+      left: 0;
+    }
+    
+    /* Default shadow position */
+    .nav-right-section .nav-shadow.default {
+      width: 100px;
+      left: 0;
+    }
+    
   }
+
+  

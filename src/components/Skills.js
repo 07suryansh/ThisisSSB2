@@ -7,6 +7,7 @@ import { SiCplusplus } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
@@ -161,6 +162,10 @@ export default function Skills() {
                 style={{ color: "#374151" }}
               />
               <span className="tech-name">Javascript</span>
+            </div>
+            <div className="tech-info">
+              <FaJava className="react-icons" style={{ color: "#374151" }} />
+              <span className="tech-name">Java</span>
             </div>
             <div className="tech-info">
               <FaGolang className="react-icons" style={{ color: "#374151" }} />

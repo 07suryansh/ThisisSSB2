@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./projects.css";
 import img3 from "./assets/weather-web.png";
 import img2 from "./assets/password-generator.png";
@@ -9,6 +10,19 @@ import img6 from "./assets/karnari.png";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
+  const [projects,setProjects]=useState([]);
+  useEffect(()=>{
+    const apiKey = process.env.REACT_APP_API;
+    const projectsApi=`${apiKey}/projects`;
+    // console.log(projectsApi);
+    axios.get(projectsApi).then((response)=>{
+      console.log(response.data);
+      setProjects(response.data);
+    }).catch((error)=>{
+      console.log(error);
+    })
+    
+  },[]);
   // {curPrintStar(codechefData.rating).map((e, index) => (
   //   <div key={index}>{e}</div>
   // ))}
@@ -24,20 +38,29 @@ export default function Projects() {
         <div className="projects-container">
           <div className="projects-heading">
           </div>
+          {projects.map((val,key)=>(<ProjectCard
+            heading={val.title}
+            
+            tech={val.techs.map((e, index) => (
+              <div
+                key={index}
+                className="tech-bar"
+              >
+                {e}
+              </div>
+            ))}
+            imglink={val.imageUrl}
+            url={val.websiteLink}
+            github={val.githubLink}
+            info={val.info}
+
+          />))}
           <ProjectCard
             heading="The Karnari"
             tech={techStack6.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"20px",
-                  border:"1px solid #175CA3"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>
@@ -51,14 +74,7 @@ export default function Projects() {
             tech={techStack5.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"20px"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>
@@ -72,15 +88,7 @@ export default function Projects() {
             tech={techStack4.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"20px",
-                  border:"1px solid #175CA3"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>
@@ -94,14 +102,7 @@ export default function Projects() {
             tech={techStack3.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"4px"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>
@@ -118,14 +119,7 @@ export default function Projects() {
             tech={techStack2.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"4px"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>
@@ -142,14 +136,7 @@ export default function Projects() {
             tech={techStack1.map((e, index) => (
               <div
                 key={index}
-                style={{
-                  backgroundColor: "#ECF5FD",
-                  padding: "4px 12px",
-                  fontSize:"12px",
-                  fontWeight:"600",
-                  color:"#175CA3",
-                  borderRadius:"4px"
-                }}
+                className="tech-bar"
               >
                 {e}
               </div>

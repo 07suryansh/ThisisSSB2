@@ -6,8 +6,8 @@
     width: 100%;
 }
 .about-heading{
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 10px;
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: row;
@@ -20,8 +20,9 @@
     background-color: blueviolet;
 }
 .about{
-    font-weight: 600;
+    font-weight: 700;
     font-size: 25px;
+    color: #374151;
 }
 .about-box{
     margin-top: 20px;
@@ -37,26 +38,30 @@
     gap: 5px;
     border: 1px solid #dadada;
     border-radius: 20px;
-    background-color: #f4f4f4;
-    border:none;
+    /* background-color: #f4f4f4;
+    border:none; */
+    color: #374151;
+    font-weight: 700;
 }
 .institute-name{
-    font-weight: 500;
+    font-weight: 700;
     font-size: larger;
+    color: #374151;
 }
 .study-period{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 15px;
 }
 .study-stream{
-    color: rgb(0, 0, 0);
+    color: #374151;
     padding: 0px 0px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 15px;
 }
 .grade{
-    font-weight: 300;
+    font-weight: 700;
     font-size: 15px;
+    color: #374151;
 }
 
 /* mobile screen */
@@ -83,8 +88,9 @@
         background-color: blueviolet;
     }
     .about{
-        font-weight: 600;
+        font-weight: 700;
         font-size: 25px;
+        /* color: #374151; */
     }
     .about-box{
         margin-top: 10px;
@@ -102,19 +108,20 @@
     }
     .institute-name{
         /* color: blueviolet; */
-        font-weight: 600;
+        font-weight: 700;
         font-size:20px;
     }
     .study-period{
-        font-weight: 500;
+        font-weight: 400;
     }
     .study-stream{
-        color: rgb(0, 0, 0);
+        color: #374151;
         padding: 0px 0px;
-        font-weight: 300;
+        font-weight: 400;
         margin: 2px -2px;
     }
     .grade{
-        font-weight: 300;
+        font-weight: 700;
+        color: #374151;
     }
 }

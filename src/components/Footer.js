@@ -1,22 +1,30 @@
 import React from "react";
 import "./footer.css";
-import logohd from './ssb.png'
+import logohd from "./ssb.png";
 
 export default function Footer() {
   return (
     <footer className="footer-container">
-      <div className="footer-logo">
-        <img src={logohd} alt="" />
-        <p>&copy; 2024 Suryansh Singh Bisen</p>
-      </div>
       <div className="footer-content">
-        <a href="">LinkedIn</a>
-        <a href="">Github</a>
-        <a href="">X</a>
-        <a href="">Codeforces</a>
-        <a href="">Leetcode</a>
-        <a href="">Codechef</a>
+        <img src={logohd} alt="" className="ssb-logo" />
+
+        <div className="footer-links-one">
+          <a href="https://codeforces.com/profile/07suryansh" target="_blank" rel="noreferrer">
+            Codeforces
+          </a>
+          <a href="https://leetcode.com/u/07suryansh/" target="_blank" rel="noreferrer">Leetcode</a>
+          <a href="https://www.codechef.com/users/bisensuryansh" target="_blank" rel="noreferrer">Codechef</a>
+          <a href="https://www.naukri.com/code360/profile/07suryansh" target="_blank" rel="noreferrer">Codestudio</a>
+        </div>
+        <div className="footer-links-one">
+          <a href="https://www.linkedin.com/in/07suryansh/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/07suryansh" target="_blank" rel="noreferrer">Github</a>
+          <a href="https://x.com/suryanshbisen" target="_blank" rel="noreferrer">X</a>
+          <a href="https://www.instagram.com/07suryansh/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
       </div>
+
+      <p className="copyright">&copy; 2024 Suryansh Singh Bisen</p>
     </footer>
   );
 }
