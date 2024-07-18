@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -11,24 +11,35 @@ import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import Resume from "./components/Resume";
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          {/* <Route path="/contact" element={<Footer />} /> */}
-          <Route path="/contact" element={<Contact/>} />
-        </Routes>
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <AppContent />
     </Router>
   );
-}
+};
+
+const AppContent = () => {
+  const location = useLocation();
+
+  // Check if the current path is "/resume"
+  const isResumePage = location.pathname === '/resume';
+
+  return (
+    <div className="App">
+      {!isResumePage && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+      </Routes>
+      {!isResumePage && <Footer />}
+      {!isResumePage && <ScrollToTop />}
+    </div>
+  );
+};
 
 export default App;
