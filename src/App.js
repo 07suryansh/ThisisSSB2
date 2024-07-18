@@ -14,20 +14,8 @@ import Resume from "./components/Resume";
 const App = () => {
   return (
     <Router>
-      <AppContent />
-    </Router>
-  );
-};
-
-const AppContent = () => {
-  const location = useLocation();
-
-  // Check if the current path is "/resume"
-  const isResumePage = location.pathname === '/resume';
-
-  return (
-    <div className="App">
-      {!isResumePage && <Navbar />}
+      <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -36,9 +24,10 @@ const AppContent = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
       </Routes>
-      {!isResumePage && <Footer />}
-      {!isResumePage && <ScrollToTop />}
+      <Footer />
+      <ScrollToTop />
     </div>
+    </Router>
   );
 };
 
