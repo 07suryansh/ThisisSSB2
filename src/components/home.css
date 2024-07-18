@@ -163,8 +163,8 @@
     font-size: 20px;
     font-weight: 300;
     line-height: 1.8;
-    text-align: justify;
-    font-weight: 500;
+    text-align: start;
+    font-weight: 400;
     background-color: #f0f0f0;
     padding: 20px 40px;
     margin-left: 40px;
@@ -386,14 +386,14 @@ p {
         padding: auto;
         font-size: 18px;
         padding: 0;
-        text-align: justify;
-        font-weight: 700;
+        font-weight: 500;
         color: #374151;
         background-color: white;
-        padding: 20px;
+        padding: 16px;
         margin: 4px;
+        margin-top: 10px;
         border: 1px solid #e0e0e0;
-        border-radius: 30px;
+        border-radius: 20px;
     }
     .footer-container{
         position: fixed;

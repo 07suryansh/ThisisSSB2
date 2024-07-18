@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 40px;
 }
 .about-heading{
     padding-top: 50px;
@@ -72,10 +73,11 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 60px;
+        margin-bottom: 0px;
     }
     .about-heading{
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 10px;
         /* background-color: aquamarine; */
         display: flex;
         flex-direction: row;

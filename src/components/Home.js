@@ -15,8 +15,17 @@ import {
 } from "react-icons/fa6";
 import axios from "axios";
 import ProgrammingCard from "./ProgrammingCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/resume');
+  };
+
+
   // skills start
 
   const [codeforcesData, setCodeforcesData] = useState(0);
@@ -132,10 +141,16 @@ export default function Home() {
             />
             <span className="myname">Suryansh Singh Bisen</span>
             <section className="socials">
-              <a href="https://www.instagram.com/07suryansh/" className="icon-link">
+              <a
+                href="https://www.instagram.com/07suryansh/"
+                className="icon-link"
+              >
                 <FaInstagram className="social-icon" />
               </a>
-              <a href="https://www.linkedin.com/in/07suryansh/" className="icon-link">
+              <a
+                href="https://www.linkedin.com/in/07suryansh/"
+                className="icon-link"
+              >
                 <FaLinkedinIn className="social-icon" />
               </a>
               <a href="https://x.com/suryanshbisen" className="icon-link">
@@ -145,51 +160,16 @@ export default function Home() {
 
             <button
               className="btn"
-              onClick={() => {
-                window.open(
-                  "https://drive.google.com/drive/u/0/folders/1G8on4LDrpUruNEBfzn5GTGdVkhVoSj8K",
-                  "_blank"
-                );
-              }}
+              onClick={handleButtonClick}
             >
               Resume
             </button>
             {/* <span class="material-symbols-outlined">download</span> */}
             <p className="para send">
-              I'm Full Stack Web developer and UI/UX designer. I've done my B.Tech in Electronics and Communication Engineering from
-              National Institute of Technology Hamirpur.
+              I'm Full Stack Web developer and UI/UX designer. I've done my
+              B.Tech in Electronics and Communication Engineering from National
+              Institute of Technology Hamirpur.
             </p>
-          </div>
-        </div>
-        <div className="about-container">
-          <div className="about-heading">
-            <span className="about">Education</span>
-          </div>
-          <div className="about-box">
-            <span className="institute-name">
-              National Institute of Technology Hamirpur{" "}
-            </span>
-            <span className="study-stream">
-              B.Tech in Electronics and Communication Engineering
-            </span>
-            <span className="study-period">2020-2024</span>
-            <span className="grade">8.28/10</span>
-          </div>
-          <div className="about-box">
-            <span className="institute-name">
-              Kendriya Vidyalaya IIT Kanpur{" "}
-            </span>
-            <span className="study-stream">Class XII</span>
-            <span className="study-period">2019</span>
-            <span className="grade">95%</span>
-          </div>
-          <div className="about-box">
-            <span className="institute-name">
-              Kendriya Vidyalaya IIT Kanpur{" "}
-            </span>
-            <span className="study-stream">Class X</span>
-            <span className="study-period">2017</span>
-            <span className="grade">10 CGPA</span>
           </div>
         </div>
         <div className="about-heading">
@@ -245,6 +225,38 @@ export default function Home() {
             platformLink={"https://leetcode.com/07suryansh/"}
           />
         </div>
+        <div className="about-container">
+          <div className="about-heading">
+            <span className="about">Education</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              National Institute of Technology Hamirpur{" "}
+            </span>
+            <span className="study-stream">
+              B.Tech in Electronics and Communication Engineering
+            </span>
+            <span className="study-period">2020-2024</span>
+            <span className="grade">8.28/10</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              Kendriya Vidyalaya IIT Kanpur{" "}
+            </span>
+            <span className="study-stream">Class XII</span>
+            <span className="study-period">2019</span>
+            <span className="grade">95%</span>
+          </div>
+          <div className="about-box">
+            <span className="institute-name">
+              Kendriya Vidyalaya IIT Kanpur{" "}
+            </span>
+            <span className="study-stream">Class X</span>
+            <span className="study-period">2017</span>
+            <span className="grade">10 CGPA</span>
+          </div>
+        </div>
+        
       </div>
     </>
   );
