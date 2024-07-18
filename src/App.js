@@ -9,7 +9,6 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
-import Resume from "./components/Resume";
 
 const App = () => {
   return (
@@ -22,7 +21,6 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
       <ScrollToTop />

@@ -22,7 +22,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/resume');
+    window.location.href = 'https://ssbresume.vercel.app';
   };
 
 
